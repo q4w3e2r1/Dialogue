@@ -1,0 +1,200 @@
+.chatContainer {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+}
+
+
+.mainChat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding: 0 10rem;
+}
+
+
+.message {
+  padding: 1.2rem;
+  margin-bottom: 20px;
+  background: #d6dbd7;
+  border-radius: 1rem;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  min-width: 20rem;
+}
+
+.myMessage {
+  padding: 1.2rem;
+  margin-bottom: 20px;
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  min-width: 15rem;
+  margin-left: auto;
+  text-align: right;
+}
+
+.author {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.myMessage .author {
+  font-size: 1.3rem;
+}
+
+.content {
+  font-size: 1.2rem;
+}
+
+
+
+.messageBox {
+  height: 4rem;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 0 15px;
+  border-radius: 10px;
+  border: 1px solid rgb(63, 63, 63);
+  margin: 1rem auto;
+}
+.messageBox:focus-within {
+  border: 1px solid rgb(110, 110, 110);
+}
+.fileUploadWrapper {
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.fileUpload {
+  display: none;
+}
+.fileUploadWrapper label {
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.fileUploadWrapper label img {
+  height: 40px;
+}
+.fileUploadWrapper label img path {
+  transition: all 0.3s;
+}
+.fileUploadWrapper label img circle {
+  transition: all 0.3s;
+}
+.fileUploadWrapper label:hover img path {
+  stroke: #fff;
+}
+.fileUploadWrapper label:hover img circle {
+  stroke: #fff;
+  fill: #3c3c3c;
+}
+.fileUploadWrapper label:hover .tooltip {
+  display: block;
+  opacity: 1;
+}
+
+.tooltip {
+  position: absolute;
+  top: -40px;
+  display: none;
+  opacity: 0;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+  text-wrap: nowrap;
+  background-color: #ffffff;
+  padding: 6px 10px;
+  border: 1px solid #3c3c3c;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.596);
+  transition: all 0.3s;
+}
+
+.messageInput {
+  height: 100%;
+  font-size: 1.2rem;
+  background-color: transparent;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding-left: 10px;
+  color: rgb(0, 0, 0);
+}
+.messageInput:focus ~ .sendButton img path,
+.messageInput:valid ~ .sendButton img path {
+  fill: #3c3c3c;
+  stroke: white;
+}
+
+.sendButton {
+  width: fit-content;
+  height: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+
+}
+.sendButton img {
+  height: 2.4rem;
+  transition: all 0.3s;
+}
+.sendButton img path {
+  transition: all 0.3s;
+}
+.sendButton:hover img path {
+  fill: #3c3c3c;
+  stroke: white;
+}
+
+.emojiButton{
+  width: fit-content;
+  height: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1.5rem;
+  margin-right: 0.8rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: auto;
+  align-items: center;
+}
+
+
