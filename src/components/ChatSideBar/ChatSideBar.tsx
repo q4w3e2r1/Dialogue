@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getChatsByAuthor } from "../../DB/ChatSore";
 import classes from "./ChatSideBar.module.css";
 
-const ChatSidebar = ({ username, roomId }: { username: string, roomId: string }) => {
+const ChatSidebar = ({ username, roomId, setRoomId }: { username: string, roomId: string, setRoomId: (roomId: string) => void }) => {
   const [chatIds, setChatIds] = useState<string[]>([]);
 
   useEffect(() => {
@@ -21,7 +21,10 @@ const ChatSidebar = ({ username, roomId }: { username: string, roomId: string })
         <div className={classes.chatList}>
           {chatIds.length > 0 ? (
             chatIds.map((chatId) => (
-              <div className={`${classes.chatItem} ${chatId === roomId ? classes.active : ""}`} key={chatId}>
+              <div 
+              className={`${classes.chatItem} ${chatId === roomId ? classes.active : ""}`} key={chatId}
+              onClick={() => setRoomId(chatId)}
+              >
                 {chatId}
               </div>
             ))

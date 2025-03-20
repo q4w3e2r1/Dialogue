@@ -4,15 +4,17 @@
   width: 100%;
   margin: 0;
   padding: 0;
-
+  
 }
 
 
 .mainChat {
+  max-width: 80rem;
   flex: 1;
   display: flex;
   flex-direction: column;
   padding: 10px;
+  margin: 0 auto;
 }
 
 .messages {
@@ -140,8 +142,8 @@
   height: 100%;
   font-size: 1.2rem;
   background-color: transparent;
-  width: 100%;
   outline: none;
+  width: 100%;
   border: none;
   padding-left: 10px;
   color: rgb(0, 0, 0);
@@ -195,6 +197,13 @@
   justify-content: space-between;
   margin-left: auto;
   align-items: center;
+  position: relative;
 }
 
+.emojiPicker{
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  margin: 4rem 0;
+}
 

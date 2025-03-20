@@ -14,7 +14,7 @@ export const openDatabase = (): Promise<IDBDatabase> => {
     });
   };
   
-  export const saveChat = async (roomId: string, messages: any[]) => {
+  export const saveChat = async (roomId: string, messages: MessageType[]) => {
     const db = await openDatabase();
     const transaction = db.transaction("chats", "readwrite");
     const store = transaction.objectStore("chats");
@@ -22,7 +22,7 @@ export const openDatabase = (): Promise<IDBDatabase> => {
     store.put({ roomId, messages });
   };
   
-  export const getChat = async (roomId: string): Promise<any | null> => {
+  export const getChat = async (roomId: string): Promise<ChatType | null> => {
     const db = await openDatabase();
     const transaction = db.transaction("chats", "readonly");
     const store = transaction.objectStore("chats");
@@ -62,6 +62,16 @@ export const openDatabase = (): Promise<IDBDatabase> => {
       request.onerror = () => resolve([]);
     });
   };
+
+
+  export const clearChats = async () => {
+    const db = await openDatabase();
+    const transaction = db.transaction("chats", "readwrite");
+    const store = transaction.objectStore("chats");
+  
+    store.clear();
+  };
+  
   
   
 //   export const saveFile = async (file: File): Promise<string> => {
